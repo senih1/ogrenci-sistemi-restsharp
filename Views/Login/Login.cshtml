@@ -1,0 +1,48 @@
+﻿@model RegisterModel
+@if (TempData["Alert"] != null)
+{
+    <div class="alert @TempData["AlertCss"] mb-5" role="alert">
+        @TempData["Alert"]
+    </div>
+}
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="form-wrapper">
+    <div class="form-box registration-form">
+        <h2>Üye Ol</h2>
+        <form action="/register" method="post">
+            <p><input type="text" placeholder="@@Kullanıcı Adı" name="Username" value="@Model.Username" required /></p>
+            <p><input type="password" placeholder="Şifre" name="Password" required /></p>
+            <p><input type="password" placeholder="Şifreyi Tekrar Yaz" name="PasswordCheck" required /></p>
+            <p><input type="email" placeholder="E-Posta Adresi" value="@Model.Email" name="Email" required /></p>
+            <button class="g-recaptcha"
+                    data-sitekey="6Ld3ZDgqAAAAABwcpbcapSez6T7rqy5Pn2e288Wu"
+                    data-callback='onSubmit'
+                    data-action='submit'>
+                Üye Ol
+            </button>
+        </form>
+    </div>
+    <div class="form-box login-form">
+        <h2>Giriş Yap</h2>
+        <form action="/login" method="post" id="login-form">
+            <p><input type="text" placeholder="Kullanıcı Adı" name="Username" required /></p>
+            <p><input type="password" placeholder="Şifre" name="Password" required /></p>
+            <button class="g-recaptcha"
+                    data-sitekey="6Ld3ZDgqAAAAABwcpbcapSez6T7rqy5Pn2e288Wu"
+                    data-callback='onSubmit'
+                    data-action='submit'>
+                Giriş Yap
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("login-form").submit();
+    }
+</script>

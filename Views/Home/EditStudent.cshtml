@@ -1,0 +1,22 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Edit User";
+}
+@if (TempData["Alert"] != null)
+{
+    <div class="alert @TempData["AlertCss"] mb-5" role="alert">
+        @TempData["Alert"]
+    </div>
+}
+﻿<h2><a href="/">Öğrenci</a> Düzenleme Formu</h2>
+<div class="form-container">
+    <form method="post" action="/edit">
+        <p><input required type="text" name="name" placeholder="Ad" value="@Model.Name" /></p>
+        <p><input required type="text" name="surname" placeholder="Soyad" value="@Model.Surname" /></p>
+        <p><input required type="number" name="age" placeholder="Yaş" value="@Model.Age" /></p>
+        <p><input required type="email" name="email" placeholder="E-Posta" value="@Model.Email" /></p>
+        <p><input required type="text" name="phoneNumber" placeholder="Telefon Numarası" value="@Model.PhoneNumber" /></p>
+        <p><input required type="hidden" name="id" value="@Model.Id" /></p>
+        <button>Güncelle</button>
+    </form>
+</div>

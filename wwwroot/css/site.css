@@ -1,0 +1,135 @@
+﻿﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2,h5 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+    h2 a, h5 a {
+        color: #007bff; 
+        text-decoration: none; 
+    }
+
+        h2 a:hover, h5 a:hover {
+            text-decoration: underline; 
+        }
+
+
+.form-container {
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#studentInputForm input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #f5f5f5;
+    background-color: #1e1e1e;
+}
+
+#studentInputForm button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2a2a2a;
+}
+
+thead {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+    tbody tr:hover, td:hover {
+        background-color: #121212;
+    }
+
+.alert {
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #007bff; 
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+form {
+    width: 100%;
+    max-width: 400px;
+}
+
+    form p {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #f5f5f5;
+        background-color: #1e1e1e;
+        margin-left: 175px;
+    }
+
+    form .g-recaptcha {
+        margin-left: 320px;
+        margin-bottom: 35px;
+    }
+
+ 

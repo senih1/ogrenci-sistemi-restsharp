@@ -1,0 +1,66 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Student List";
+}
+
+﻿<div class="container">
+    <h2>Öğrenci Listesi / <a href="/form">Ekle</a></h2>
+    @if (ViewData["Username"] == null)
+    {
+        <h5><a href="/login">Login</a></h5>
+    }
+    else
+    {
+        <h5><a href="/logout">Çıkış yap</a></h5>
+    }
+    @if (TempData["Alert"] != null)
+    {
+        <div class="alert @TempData["AlertCss"] mb-5" role="alert">
+            @TempData["Alert"]
+        </div>
+    }
+    <table>
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yaş</th>
+                <th>E-Posta</th>
+                <th>Telefon Numarası</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="studentList">
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        @user.Name
+                    </td>
+                    <td>
+                        @user.Surname
+                    </td>
+                    <td>
+                        @user.Age
+                    </td>
+                    <td>
+                        @user.Email
+                    </td>
+                    <td>
+                        @user.PhoneNumber
+                    </td>
+                    <td>
+                        <a href="/edit/@user.Id">Düzenle</a>
+                    </td>
+                    <td>
+                        <form method="post" action="/api/@user.Id" onsubmit="return confirm('Bu kullanıcıyı silmek istediğinden emin misin?');">
+                            <button type="submit" class="btn-link">Sil</button>
+                        </form>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
